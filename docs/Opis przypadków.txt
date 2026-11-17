@@ -1,0 +1,87 @@
+Opis przypadków użycia
+
+Przypadek 1 – Zakup biletu
+
+Aktor główny – Klient
+Aktorzy wspierający – System płatności, Usługa e-mail
+
+Cel
+Klient chce kupić bilet na wybrany seans i otrzymać potwierdzenie zakupu.
+
+Warunki wstępne
+- Klient ma dostęp do systemu.
+- Wybrany film i seans istnieją.
+
+Przebieg główny
+1. Klient wybiera film.
+2. Klient wybiera interesujący go seans.
+3. System wyświetla dostępne miejsca.
+4. Klient wybiera miejsce.
+5. System sprawdza dostępność wybranego miejsca.
+6. System tymczasowo blokuje wybrane miejsce.
+7. Klient wybiera sposób płatności.
+8. System przekazuje dane płatności do systemu płatności.
+9. System płatności przetwarza płatność.
+10. System otrzymuje informację o poprawnym wykonaniu płatności.
+11. System zapisuje zakup biletu.
+12. System oznacza miejsce jako zajęte.
+13. System przekazuje potwierdzenie zakupu do usługi e-mail.
+14. Usługa e-mail wysyła potwierdzenie na adres klienta.
+15. Klient otrzymuje potwierdzenie.
+
+Przebiegi alternatywne
+
+A1 – Miejsce jest już zajęte
+1. W kroku 5 system stwierdza, że wybrane miejsce nie jest dostępne.
+2. System informuje o tym klienta i odświeża listę dostępnych miejsc.
+3. Klient wybiera inne miejsce.
+4. Przebieg wraca do kroku 5, czyli sprawdzenia dostępności nowego miejsca.
+
+A2 – Płatność nie powiodła się
+1. System płatności odrzuca transakcję.
+2. System informuje klienta o nieudanej płatności.
+3. Klient wybiera ponowienie płatności albo anulowanie zakupu.
+4. Po wybraniu ponowienia przebieg wraca do kroku 7.
+5. Po anulowaniu system zwalnia blokadę miejsca i wyświetla informację o anulowaniu. Proces kończy się bez zakupu biletu.
+
+Warunki końcowe po udanym zakupie
+- Bilet jest zapisany w systemie.
+- Miejsce jest oznaczone jako zajęte.
+- Klient otrzymuje potwierdzenie zakupu.
+
+
+Przypadek 2 – Utworzenie seansu
+
+Aktor główny – Pracownik kina
+
+Cel
+Pracownik chce utworzyć nowy seans filmu w wybranej sali.
+
+Warunki wstępne
+- Pracownik jest zalogowany i ma uprawnienia do zarządzania seansami.
+- Film istnieje w systemie.
+- Sala istnieje w systemie.
+
+Przebieg główny
+1. Pracownik przechodzi do zarządzania seansami.
+2. Pracownik wybiera opcję dodania nowego seansu.
+3. Pracownik wybiera film.
+4. Pracownik wybiera salę.
+5. Pracownik określa datę i godzinę rozpoczęcia seansu.
+6. Pracownik zatwierdza dane.
+7. System sprawdza, czy sala jest wolna przez cały czas trwania planowanego seansu.
+8. System zapisuje nowy seans.
+9. System wyświetla potwierdzenie utworzenia seansu.
+
+Przebieg alternatywny
+
+A1 – Sala jest zajęta
+1. W kroku 7 system wykrywa, że planowany seans nakłada się na inny seans w tej samej sali.
+2. System informuje pracownika o konflikcie i nie zapisuje nowego seansu.
+3. Pracownik zmienia salę lub termin i ponownie zatwierdza dane.
+4. Przebieg wraca do kroku 7, czyli sprawdzenia dostępności sali.
+
+Warunki końcowe
+- Nowy seans jest zapisany w systemie.
+- Seans pojawia się w repertuarze.
+- Wybrana sala jest przypisana do seansu.

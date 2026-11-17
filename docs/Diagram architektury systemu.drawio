@@ -1,0 +1,210 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Strona-1" id="jx-WGe1zwtdWlnX7d7Js">
+    <mxGraphModel dx="1427" dy="731" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" plantUmlData="{&#xa;  &quot;data&quot;: &quot;@startuml\ntitle Architektura systemu obsługi kina\n\nskinparam componentStyle rectangle\n\nactor \&quot;Klient\&quot; as Klient\nactor \&quot;Pracownik kina\&quot; as Pracownik\nactor \&quot;Administrator\&quot; as Admin\n\nnode \&quot;System obsługi kina\&quot; {\n\n    package \&quot;Warstwa prezentacji\&quot; {\n        component \&quot;Frontend\\nReact\&quot; as Frontend\n    }\n\n    package \&quot;Warstwa logiki biznesowej\&quot; {\n        component \&quot;Backend\\nSpring Boot\&quot; as Backend\n\n        component \&quot;Moduł użytkowników\&quot; as Users\n        component \&quot;Moduł filmów\&quot; as Movies\n        component \&quot;Moduł seansów\&quot; as Screenings\n        component \&quot;Moduł rezerwacji\&quot; as Reservations\n        component \&quot;Moduł biletów\&quot; as Tickets\n        component \&quot;Moduł płatności\&quot; as Payments\n    }\n\n    package \&quot;Warstwa danych\&quot; {\n        database \&quot;PostgreSQL\&quot; as DB\n    }\n}\n\ncloud \&quot;System płatności\&quot; as PaymentSystem\ncloud \&quot;Usługa e-mail\&quot; as EmailService\n\nKlient --&gt; Frontend\nPracownik --&gt; Frontend\nAdmin --&gt; Frontend\n\nFrontend --&gt; Backend\n\nBackend --&gt; Users\nBackend --&gt; Movies\nBackend --&gt; Screenings\nBackend --&gt; Reservations\nBackend --&gt; Tickets\nBackend --&gt; Payments\n\nUsers --&gt; DB\nMovies --&gt; DB\nScreenings --&gt; DB\nReservations --&gt; DB\nTickets --&gt; DB\n\nPayments --&gt; PaymentSystem\nBackend --&gt; EmailService\n\n@enduml&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="LR78__6kHI4_xrvfIK23-289">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="n_0" plantUmlBaseStyle="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-290">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-289" style="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;" vertex="1">
+            <mxGeometry height="54" width="40" x="406.03" y="296" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Klient" plantUmlId="cap_1" plantUmlBaseStyle="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;whiteSpace=wrap;part=1;" plantUmlBaseValue="Klient" id="LR78__6kHI4_xrvfIK23-291">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-290" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;whiteSpace=wrap;part=1;" vertex="1">
+            <mxGeometry height="22" width="42" x="-1" y="54" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="n_2" plantUmlBaseStyle="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-292">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-289" style="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;" vertex="1">
+            <mxGeometry height="54" width="40" x="607.5" y="296" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Pracownik kina" plantUmlId="cap_3" plantUmlBaseStyle="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;whiteSpace=wrap;part=1;" plantUmlBaseValue="Pracownik kina" id="LR78__6kHI4_xrvfIK23-293">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-292" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;whiteSpace=wrap;part=1;" vertex="1">
+            <mxGeometry height="22" width="108" x="-34" y="54" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="n_4" plantUmlBaseStyle="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-294">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-289" style="shape=umlActor;html=1;fillColor=#F1F1F1;strokeColor=#181818;" vertex="1">
+            <mxGeometry height="54" width="40" x="787" y="296" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Administrator" plantUmlId="cap_5" plantUmlBaseStyle="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;whiteSpace=wrap;part=1;" plantUmlBaseValue="Administrator" id="LR78__6kHI4_xrvfIK23-295">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-294" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=14;whiteSpace=wrap;part=1;" vertex="1">
+            <mxGeometry height="22" width="97" x="-28.5" y="54" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="System płatności" plantUmlId="n_6" plantUmlBaseStyle="shape=cloud;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="System płatności" id="LR78__6kHI4_xrvfIK23-296">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-289" style="shape=cloud;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="154" x="1267.22" y="698.75" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Usługa e-mail" plantUmlId="n_7" plantUmlBaseStyle="shape=cloud;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="Usługa e-mail" id="LR78__6kHI4_xrvfIK23-297">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-289" style="shape=cloud;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="135" x="1267.22" y="589.75" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="System obsługi kina" plantUmlId="c_8" plantUmlBaseStyle="shape=cube;size=10;flipH=1;fillColor=none;strokeColor=#181818;verticalAlign=top;align=center;spacingTop=7;spacingRight=10;fontSize=14;fontStyle=1;whiteSpace=wrap;" plantUmlBaseValue="System obsługi kina" id="LR78__6kHI4_xrvfIK23-298">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-289" style="shape=cube;size=10;flipH=1;fillColor=none;strokeColor=#181818;verticalAlign=top;align=center;spacingTop=7;spacingRight=10;fontSize=14;fontStyle=1;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="505.75" width="1202.22" x="20" y="387.5" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Warstwa prezentacji" plantUmlId="c_9" plantUmlBaseStyle="shape=folder;tabWidth=150;tabHeight=23;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=14;fontStyle=1;fontColor=#000000;align=left;verticalAlign=top;spacingLeft=2;spacingTop=-4;" plantUmlBaseValue="Warstwa prezentacji" id="LR78__6kHI4_xrvfIK23-299">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-298" style="shape=folder;tabWidth=150;tabHeight=23;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=14;fontStyle=1;fontColor=#000000;align=left;verticalAlign=top;spacingLeft=2;spacingTop=-4;" vertex="1">
+            <mxGeometry height="95" width="174.9" x="520" y="62.5" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Frontend&#xa;React" plantUmlId="n_10" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="Frontend&#xa;React" id="LR78__6kHI4_xrvfIK23-300">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-299" style="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="99" x="38" y="34" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Warstwa logiki biznesowej" plantUmlId="c_11" plantUmlBaseStyle="shape=folder;tabWidth=190;tabHeight=23;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=14;fontStyle=1;fontColor=#000000;align=left;verticalAlign=top;spacingLeft=2;spacingTop=-4;" plantUmlBaseValue="Warstwa logiki biznesowej" id="LR78__6kHI4_xrvfIK23-301">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-298" style="shape=folder;tabWidth=190;tabHeight=23;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=14;fontStyle=1;fontColor=#000000;align=left;verticalAlign=top;spacingLeft=2;spacingTop=-4;" vertex="1">
+            <mxGeometry height="204" width="1162.22" x="15" y="168.25" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Backend&#xa;Spring Boot" plantUmlId="n_12" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="Backend&#xa;Spring Boot" id="LR78__6kHI4_xrvfIK23-302">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-301" style="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="115" x="537.77" y="34" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Moduł użytkowników" plantUmlId="n_13" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="Moduł użytkowników" id="LR78__6kHI4_xrvfIK23-303">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-301" style="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="181" x="15" y="143" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Moduł filmów" plantUmlId="n_14" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="Moduł filmów" id="LR78__6kHI4_xrvfIK23-304">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-301" style="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="131" x="231" y="143" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Moduł seansów" plantUmlId="n_15" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="Moduł seansów" id="LR78__6kHI4_xrvfIK23-305">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-301" style="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="146" x="397" y="143" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Moduł rezerwacji" plantUmlId="n_16" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="Moduł rezerwacji" id="LR78__6kHI4_xrvfIK23-306">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-301" style="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="162" x="578" y="143" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Moduł biletów" plantUmlId="n_17" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="Moduł biletów" id="LR78__6kHI4_xrvfIK23-307">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-301" style="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="135" x="793.08" y="143" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Moduł płatności" plantUmlId="n_18" plantUmlBaseStyle="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="Moduł płatności" id="LR78__6kHI4_xrvfIK23-308">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-301" style="rounded=1;absoluteArcSize=1;arcSize=6;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="49" width="150" x="997.22" y="143" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_25" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-315">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-301" source="LR78__6kHI4_xrvfIK23-302" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-303">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_26" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-316">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-301" source="LR78__6kHI4_xrvfIK23-302" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-304">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_27" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-317">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-301" source="LR78__6kHI4_xrvfIK23-302" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-305">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_28" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-318">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-301" source="LR78__6kHI4_xrvfIK23-302" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-306">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_29" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-319">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-301" source="LR78__6kHI4_xrvfIK23-302" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-307">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_30" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-320">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-301" source="LR78__6kHI4_xrvfIK23-302" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-308">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Warstwa danych" plantUmlId="c_19" plantUmlBaseStyle="shape=folder;tabWidth=122;tabHeight=23;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=14;fontStyle=1;fontColor=#000000;align=left;verticalAlign=top;spacingLeft=2;spacingTop=-4;" plantUmlBaseValue="Warstwa danych" id="LR78__6kHI4_xrvfIK23-309">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-298" style="shape=folder;tabWidth=122;tabHeight=23;tabPosition=left;html=1;whiteSpace=wrap;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=14;fontStyle=1;fontColor=#000000;align=left;verticalAlign=top;spacingLeft=2;spacingTop=-4;" vertex="1">
+            <mxGeometry height="92" width="145.29" x="412" y="397.75" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="PostgreSQL" plantUmlId="n_20" plantUmlBaseStyle="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" plantUmlBaseValue="PostgreSQL" id="LR78__6kHI4_xrvfIK23-310">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-309" style="shape=cylinder3;size=10;boundedLbl=1;backgroundOutline=1;fillColor=#F1F1F1;strokeColor=#181818;fontSize=14;whiteSpace=wrap;" vertex="1">
+            <mxGeometry height="46" width="94" x="26" y="34" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_24" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-314">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-298" source="LR78__6kHI4_xrvfIK23-300" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-302">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_31" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-321">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-298" source="LR78__6kHI4_xrvfIK23-303" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-310">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_32" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-322">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-298" source="LR78__6kHI4_xrvfIK23-304" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-310">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_33" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-323">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-298" source="LR78__6kHI4_xrvfIK23-305" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-310">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_34" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-324">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-298" source="LR78__6kHI4_xrvfIK23-306" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-310">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_35" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-325">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-298" source="LR78__6kHI4_xrvfIK23-307" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-310">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_21" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-311">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-289" source="LR78__6kHI4_xrvfIK23-290" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-300">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_22" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-312">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-289" source="LR78__6kHI4_xrvfIK23-292" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-300">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_23" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-313">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-289" source="LR78__6kHI4_xrvfIK23-294" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-300">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_36" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-326">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-289" source="LR78__6kHI4_xrvfIK23-308" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-296">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="e_37" plantUmlBaseStyle="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" plantUmlBaseValue="" id="LR78__6kHI4_xrvfIK23-327">
+          <mxCell edge="1" parent="LR78__6kHI4_xrvfIK23-289" source="LR78__6kHI4_xrvfIK23-302" style="strokeColor=#181818;fontColor=#000000;fontSize=13;html=1;endArrow=classicThin;endFill=1;curved=0;rounded=0;endSize=6;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;" target="LR78__6kHI4_xrvfIK23-297">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Architektura systemu obsługi kina" plantUmlId="title_38" plantUmlBaseStyle="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;" plantUmlBaseValue="Architektura systemu obsługi kina" id="LR78__6kHI4_xrvfIK23-328">
+          <mxCell parent="LR78__6kHI4_xrvfIK23-289" style="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;" vertex="1">
+            <mxGeometry height="24" width="260" x="497.5" y="260" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

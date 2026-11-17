@@ -1,1 +1,1 @@
-# projekt-kina
+# Projekt kina

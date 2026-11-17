@@ -1,0 +1,46 @@
+Stos technologiczny i uzasadnienie
+Do realizacji systemu obsługi kina wybrano technologie pozwalające na utworzenie aplikacji internetowej składającej się z warstwy frontendowej, backendowej oraz bazy danych.
+
+Frontend — React
+React zostanie wykorzystany do stworzenia interfejsu użytkownika. Umożliwia podział aplikacji na niezależne komponenty oraz wygodne tworzenie widoków takich jak repertuar, lista seansów, wybór miejsc czy formularz zakupu biletu.
+Uzasadnienie: React jest odpowiedni do tworzenia dynamicznych aplikacji internetowych i pozwala na czytelne oddzielenie interfejsu użytkownika od logiki backendu.
+
+Backend — Java + Spring Boot
+Java wraz z frameworkiem Spring Boot zostanie wykorzystana do implementacji logiki biznesowej systemu. Backend będzie odpowiadał między innymi za obsługę użytkowników, filmów, seansów, miejsc, rezerwacji oraz zakupów.
+Uzasadnienie: Spring Boot ułatwia tworzenie aplikacji serwerowych oraz REST API, a Java pozwala na uporządkowaną implementację większej liczby funkcjonalności.
+
+Baza danych — PostgreSQL
+PostgreSQL będzie wykorzystywany do przechowywania danych systemu, takich jak użytkownicy, filmy, seanse, sale, miejsca, rezerwacje oraz bilety.
+Uzasadnienie: Relacyjna baza danych dobrze odpowiada strukturze systemu, w którym występują liczne zależności pomiędzy danymi. PostgreSQL zapewnia mechanizmy pozwalające zachować spójność danych.
+
+REST API
+Frontend będzie komunikował się z backendem za pomocą REST API.
+Uzasadnienie: Rozdzielenie frontendu i backendu ułatwia rozwój systemu oraz pozwala niezależnie rozwijać warstwę prezentacji i logikę biznesową.
+
+Git i GitHub
+Git zostanie wykorzystany do kontroli wersji, a GitHub do przechowywania kodu projektu i organizacji pracy zespołu.
+Zmiany w kodzie będą wprowadzane poprzez osobne branche i Pull Requesty. Każdy Pull Request powinien zostać przejrzany i zaakceptowany przez innego członka zespołu przed scaleniem z główną gałęzią.
+Uzasadnienie: Takie rozwiązanie pozwala kontrolować zmiany w projekcie, umożliwia przegląd kodu przez członków zespołu i ułatwia pracę równoległą.
+
+Docker
+Docker może zostać wykorzystany do uruchamiania aplikacji i bazy danych w spójnym środowisku.
+
+Podsumowanie stosu technologicznego:
+Frontend - React
+Backend - Java + Spring Boot
+API - REST
+Baza danych - PostgreSQL
+Kontrola wersji - Git
+Repozytorium - GitHub
+Konteneryzacja - Docker
+Diagramy - PlantUML/draw.io
+
+
+
+
+
+
+
+
+
+Uzasadnienie: Konteneryzacja ogranicza problemy związane z różnicami w konfiguracji komputerów członków zespołu i ułatwia uruchomienie projektu.

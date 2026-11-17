@@ -1,0 +1,50 @@
+User stories
+US-01	Jako klient chcę przeglądać repertuar, aby wiedzieć, jakie filmy są dostępne.	Must
+US-02	Jako klient chcę wyświetlać seanse filmu, aby wybrać dogodny termin.	Must
+US-03	Jako klient chcę wybrać miejsce w sali, aby zarezerwować konkretne miejsce.	Must
+US-04	Jako klient chcę zarezerwować bilet, aby zapewnić sobie miejsce na seans.	Must
+US-05	Jako klient chcę kupić bilet online, aby nie musieć kupować go w kasie.	Must
+US-06	Jako klient chcę otrzymać informację o nieudanej płatności, aby móc spróbować ponownie.	Must
+US-07	Jako klient chcę otrzymać potwierdzenie zakupu/rezerwacji, aby mieć dowód transakcji.	Should
+US-08	Jako pracownik kina chcę dodawać i edytować filmy, aby aktualizować repertuar.	Must
+US-09	Jako pracownik kina chcę tworzyć i edytować seanse, aby zarządzać repertuarem.	Must
+US-10	Jako pracownik kina chcę zarządzać salami i miejscami, aby utrzymywać poprawną konfigurację kina.	Should
+US-11	Jako klient chcę anulować rezerwację, aby zrezygnować z wcześniej zarezerwowanego biletu.	Could
+US-12	Jako klient chcę korzystać z programu lojalnościowego, aby otrzymywać dodatkowe korzyści.	Could
+
+Kryteria akceptacji
+Każdy User Story powinien mieć kilka konkretnych kryteriów. Przykładowo dla US-05:
+US-05 — Zakup biletu online
+Jako klient chcę kupić bilet online, aby nie musieć kupować go w kasie.
+
+Kryteria akceptacji:
+    • klient może wybrać film i seans,
+    • klient może wybrać dostępne miejsce,
+    • system pokazuje cenę biletu,
+    • klient może rozpocząć płatność,
+    • po udanej płatności bilet zostaje zapisany w systemie,
+    • zajęte miejsce nie może zostać sprzedane ponownie,
+    • klient otrzymuje potwierdzenie zakupu.
+
+MoSCoW
+    • Must — funkcje konieczne do działania systemu: US-01–US-06, US-08, US-09
+    • Should — ważne, ale system może działać bez nich: US-07, US-10
+    • Could — funkcje dodatkowe: US-11, US-12
+    • Won't — funkcje świadomie wyłączone z projektu, np. aplikacja mobilna czy rozbudowany system rekomendacji filmów.
+
+Wymagania niefunkcjonalne
+Jak system ma działać, a nie co ma robić:
+
+WN-01	System powinien odpowiadać na standardowe żądania użytkownika w czasie nie dłuższym niż 2 sekundy.
+WN-02	System powinien wymagać uwierzytelnienia dla kont pracowników i administratorów.
+WN-03	Komunikacja użytkownika z systemem powinna być zabezpieczona za pomocą HTTPS.
+WN-04	System powinien być dostępny poza okresami zaplanowanych prac serwisowych.
+WN-05	Interfejs powinien być czytelny i możliwy do obsługi bez specjalistycznej wiedzy.
+WN-06	System powinien umożliwiać dalszą rozbudowę wraz ze wzrostem liczby użytkowników.
+WN-07	System powinien zabezpieczać przed jednoczesną sprzedażą tego samego miejsca kilku klientom.
+WN-08	Dane systemu powinny być regularnie tworzone w kopii zapasowej.
+WN-09	Operacje administracyjne oraz błędy systemu powinny być rejestrowane.
+WN-10	Aplikacja powinna działać w aktualnych popularnych przeglądarkach internetowych.
+
+
+

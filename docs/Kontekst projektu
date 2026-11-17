@@ -1,0 +1,41 @@
+1.Krótki opis i wizja systemu
+
+Projektowany system jest systemem obsługi kina, którego głównym celem jest ułatwienie klientom wyszukiwania filmów i seansów oraz zakupu lub rezerwacji biletów.
+System umożliwia klientowi przeglądanie aktualnego repertuaru, wybór interesującego filmu i seansu, sprawdzenie dostępnych miejsc na sali oraz wybór konkretnego miejsca. Następnie klient może zarezerwować lub zakupić bilet. W przypadku zakupu system obsługuje proces płatności i przekazuje klientowi potwierdzenie transakcji.
+System wspiera również pracowników kina, którzy mogą zarządzać filmami, salami oraz seansami. Dzięki temu repertuar i dostępność miejsc mogą być na bieżąco aktualizowane.
+Wizją systemu jest stworzenie prostego i wygodnego narzędzia, które pozwoli klientom załatwić cały proces zakupu lub rezerwacji biletu online, a pracownikom kina ułatwi zarządzanie ofertą i seansami.
+
+2.Aktorzy systemu
+
+Klient
+Osoba korzystająca z systemu w celu:
+    • przeglądania repertuaru,
+    • wyszukiwania filmów,
+    • wyboru seansu,
+    • sprawdzania dostępnych miejsc,
+    • wyboru miejsca,
+    • rezerwacji biletu,
+    • zakupu biletu,
+    • otrzymania potwierdzenia rezerwacji lub zakupu.
+
+Pracownik kina
+Osoba odpowiedzialna za obsługę i zarządzanie ofertą kina. Może:
+    • dodawać i edytować informacje o filmach,
+    • tworzyć i modyfikować seanse,
+    • zarządzać salami kinowymi,
+    • sprawdzać informacje dotyczące rezerwacji i sprzedaży biletów.
+
+Administrator systemu
+Osoba odpowiedzialna za administrację systemem. Może:
+    • zarządzać użytkownikami,
+    • zarządzać uprawnieniami,
+    • konfigurować system.
+
+System płatności
+Zewnętrzny system odpowiedzialny za realizację płatności za zakupione bilety. Otrzymuje żądanie płatności od systemu kina i zwraca informację o jej wyniku.
+
+Usługa poczty elektronicznej
+Zewnętrzna usługa wykorzystywana do wysyłania klientom potwierdzeń rezerwacji i zakupu biletów.
+
+
+Zewnętrzna usługa wykorzystywana do wysyłania klientom potwierdzeń rezerwacji i zakupu biletów.
